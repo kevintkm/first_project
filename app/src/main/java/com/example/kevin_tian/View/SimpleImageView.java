@@ -21,8 +21,10 @@ import org.w3c.dom.Attr;
 public class SimpleImageView extends View{
 
     public Context context;
+
     private Paint mPaint;
     private Drawable mDrable;
+    
     private int mWidth;
     private int mHeight;
 
