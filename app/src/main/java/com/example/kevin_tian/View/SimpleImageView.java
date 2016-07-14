@@ -24,8 +24,9 @@ public class SimpleImageView extends View{
 
     private Paint mPaint;
     private Drawable mDrable;
-    
+
     private int mWidth;
+    
     private int mHeight;
 
 
