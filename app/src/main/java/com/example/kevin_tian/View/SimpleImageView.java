@@ -29,7 +29,6 @@ public class SimpleImageView extends View{
     
     private int mHeight;
 
-
     /**
      * Simple constructor to use when creating a view from code.
      *
