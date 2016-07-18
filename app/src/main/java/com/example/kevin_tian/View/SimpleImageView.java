@@ -23,6 +23,7 @@ public class SimpleImageView extends View{
     public Context context;
 
     private Paint mPaint;
+
     private Drawable mDrable;
 
     private int mWidth;
