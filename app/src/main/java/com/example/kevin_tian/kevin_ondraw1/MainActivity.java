@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         recyclerView= (RecyclerView) findViewById(R.id.recyclerview);
+        
         progress = (CircleIndicator) findViewById(R.id.ci_1);
         List<String> lists=new ArrayList<>();
         for (int i=0;i<10;i++){
