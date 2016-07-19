@@ -38,23 +38,32 @@ public class SimpleCircle extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        if(mCurPercent<mPercent){
+            mCurPercent  ++;
+            drawCircle(canvas,mCurPercent);
+            postInvalidateDelayed(15);
+        }else drawCircle(canvas,mPercent);
+    }
+
+    private void drawCircle(Canvas canvas,int num) {
         Paint bigCirclePaint = new Paint();
         //消除锯齿
         bigCirclePaint.setAntiAlias(true);
         bigCirclePaint.setColor(0xffff0000);
         //x,y 为圆心坐标 mRadius为半径
         canvas.drawCircle(100, 100, 100, bigCirclePaint);
+
         //饼状图
         Paint sectorPaint = new Paint();
         sectorPaint.setColor(0xff00ff00);
         sectorPaint.setAntiAlias(true);
         RectF rect = new RectF(0, 0, 200, 200);
+
         //参数说明见知识补充
-        for (int i=0;i<mPercent;i++){
-            mCurPercent = i;
-            postInvalidateDelayed(15);
-        }
-        canvas.drawArc(rect, 270, (float) 3.6 * mCurPercent, true, sectorPaint);
+
+
+        canvas.drawArc(rect, 270, (float) 3.6 * num, true, sectorPaint);
+
         Paint smallPaint = new Paint();
         smallPaint.setColor(0xffffffff);
         canvas.drawCircle(100, 100, 80, smallPaint);
@@ -63,11 +72,10 @@ public class SimpleCircle extends View {
         textPaint.setColor(0xff0000ff);
 
         textPaint.setTextSize(48);
-        String text = mCurPercent+"%";
+        String text = mCurPercent + "%";
         float lenth = textPaint.measureText(text);
         float height = textPaint.ascent() + textPaint.descent();
         canvas.drawText(text, 100 - lenth / 2, 100 - height / 2, textPaint);
-
     }
 
     int mPercent;

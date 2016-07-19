@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView= (SimpleCircle) findViewById(R.id.recyclerview);
-                recyclerView.setPercent(101);
+                recyclerView.setPercent(100);
         progress = (CircleIndicator) findViewById(R.id.ci_1);
 
         testProgress();
