@@ -8,14 +8,14 @@ import android.support.v7.widget.RecyclerView;
 import com.example.kevin_tian.View.CircleIndicator;
 import com.example.kevin_tian.View.CircleProgress;
 import com.example.kevin_tian.View.IndicatorItem;
+import com.example.kevin_tian.View.SimpleCircle;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    DiverAdapter adapter;
+    SimpleCircle recyclerView;
     CircleIndicator progress;
 
 
@@ -24,18 +24,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView= (RecyclerView) findViewById(R.id.recyclerview);
-        
+        recyclerView= (SimpleCircle) findViewById(R.id.recyclerview);
+                recyclerView.setPercent(101);
         progress = (CircleIndicator) findViewById(R.id.ci_1);
-        List<String> lists=new ArrayList<>();
-        for (int i=0;i<10;i++){
-            lists.add("Kevin"+i);
-        }
-        adapter=new DiverAdapter(this,lists);
-        recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this));
-        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-
 
         testProgress();
     }
