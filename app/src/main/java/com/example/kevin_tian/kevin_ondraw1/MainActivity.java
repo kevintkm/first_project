@@ -9,14 +9,13 @@ import com.example.kevin_tian.View.CircleIndicator;
 import com.example.kevin_tian.View.CircleProgress;
 import com.example.kevin_tian.View.IndicatorItem;
 import com.example.kevin_tian.View.SimpleCircle;
-import com.example.kevin_tian.View.SimpleMatrix;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    SimpleMatrix recyclerView;
+    SimpleCircle recyclerView;
     CircleIndicator progress;
 
 
@@ -25,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView= (SimpleMatrix) findViewById(R.id.recyclerview);
-                recyclerView.setTotalPercent(100);
+        recyclerView= (SimpleCircle) findViewById(R.id.recyclerview);
+                recyclerView.setPercent(100);
         progress = (CircleIndicator) findViewById(R.id.ci_1);
 
         testProgress();
