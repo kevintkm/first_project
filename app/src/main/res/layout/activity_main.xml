@@ -11,17 +11,24 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.kevin_tian.kevin_ondraw1.MainActivity">
 
-    <com.example.kevin_tian.View.SimpleCircle
+    <android.support.design.widget.TabLayout
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        app:tabIndicatorColor="@color/circle_green"
+        app:tabSelectedTextColor="@color/circle_red"
+        app:tabTextColor="@color/normal_yellow"
         android:id="@+id/recyclerview"/>
-    <com.example.kevin_tian.View.CircleIndicator
+    <!--<com.example.kevin_tian.View.CircleIndicator
         android:id="@+id/ci_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="12dp"
-        android:layout_marginTop="12dp" />
-
+        android:layout_marginTop="12dp" />-->
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/annotion"
+    android:id="@+id/bb"/>
 
 </LinearLayout>

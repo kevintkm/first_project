@@ -1,22 +1,30 @@
 package com.example.kevin_tian.kevin_ondraw1;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
+import android.widget.TableLayout;
+import android.widget.TextView;
 
 import com.example.kevin_tian.View.CircleIndicator;
 import com.example.kevin_tian.View.CircleProgress;
 import com.example.kevin_tian.View.IndicatorItem;
 import com.example.kevin_tian.View.SimpleCircle;
+import com.example.kevin_tian.View.TextScrollView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    SimpleCircle recyclerView;
+    TextScrollView recyclerView;
     CircleIndicator progress;
+    TabLayout tableLayout;
+    ImageView animation;
 
 
     @Override
@@ -24,14 +32,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView= (SimpleCircle) findViewById(R.id.recyclerview);
-                recyclerView.setPercent(100);
-        progress = (CircleIndicator) findViewById(R.id.ci_1);
+        animation = (ImageView) findViewById(R.id.bb);
+        AnimationDrawable drawable = (AnimationDrawable) animation.getDrawable();
+        drawable.start();
 
-        testProgress();
+        tableLayout= (TabLayout) findViewById(R.id.recyclerview);
+        tableLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        tableLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tableLayout.addTab(tableLayout.newTab().setText("keming"));
+        tableLayout.addTab(tableLayout.newTab().setText("tian"));
+        tableLayout.addTab(tableLayout.newTab().setText("zhujia"));
+        tableLayout.addTab(tableLayout.newTab().setText("tengteng"));
+        tableLayout.addTab(tableLayout.newTab().setText("zhu"));
+        tableLayout.addTab(tableLayout.newTab().setText("tengteng"));
+//        for (int i=0;i<9;i++){
+//            recyclerView.addItem("克明"+i);
+//        }
+              //  recyclerView.setPercent(100);
+        //progress = (CircleIndicator) findViewById(R.id.ci_1);
+
+       // testProgress();
     }
 
-    private void testProgress() {
+    /*private void testProgress() {
 
         int mCircleYellow = getResources().getColor(R.color.circle_yellow);
         int mCircleGreen = getResources().getColor(R.color.circle_green);
@@ -79,5 +102,5 @@ public class MainActivity extends AppCompatActivity {
 
         }
         progress.setContent(title, indicator+"", unit, alert);
-    }
+    }*/
 }
